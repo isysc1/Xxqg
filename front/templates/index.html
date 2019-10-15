@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习小助手</title>
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+</head>
+<body>
+
+<header class="bar bar-nav">
+  <h1 class='title'>学习小助手</h1>
+</header>
+<div>111</div>
+<div>111</div>
+<p style="font-size: 12px; margin-left: 26px;">搜索方法：选取题目中任意词组作为关键词，简短即可。</p>
+<p style="font-size: 12px; margin-left: 26px;">作者的话：这是一个知识搜索引擎，更多知识点欢迎你来补充。反馈邮件：isysc1@163.com</p>
+<div style="margin-bottom: 20px" class="content-padded">
+    <form method="post" action="{% url "search" %}">
+        {% csrf_token %}
+        <div class="searchbar row">
+            <div class="search-input col-85">
+                <input name="question" type="search" id='search' placeholder='输入关键字...'/>
+            </div>
+
+            <button type="submit" value="提交" id="button" class="button button-fill button-primary col-15">开始查找</button>
+
+        </div>
+    </form>
+
+    {% if title1 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">{{ title1 }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if title2 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">{{ title2 }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if title3 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">{{ title3 }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if title4 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">{{ title4 }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if title5 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">{{ title5 }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if title6 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">{{ title6 }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if title7 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">{{ title7 }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
