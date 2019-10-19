@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>学习小助手</title>
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 </head>
 <body>
 
 <header class="bar bar-nav">
-  <h1 class='title'>学习小助手</h1>
+    <h1 class='title'>学习小助手</h1>
 </header>
-<div>111</div>
-<div>111</div>
-<p style="font-size: 12px; margin-left: 26px;">搜索方法：选取题目中任意词组作为关键词，简短即可。</p>
-<p style="font-size: 12px; margin-left: 26px;">作者的话：这是一个知识搜索引擎，更多知识点欢迎你来补充。反馈邮件：isysc1@163.com</p>
+<div class="card">
+    <div class="card-content">
+        <div class="card-content-inner">{{ title50 }}</div>
+    </div>
+</div>
+<div style="font-size: 12px; margin-left: 26px;" class="content-padded docs-icons"><span
+        class="icon icon-search"></span> 搜索方法：选取题目中任意词组作为关键词，简短即可。
+</div>
+<div style="font-size: 12px; margin-left: 26px;" class="content-padded docs-icons"><span class="icon icon-emoji"></span> 作者的话：知识的搜索引擎，更多知识点欢迎你来补充。</div>
+<div style="font-size: 12px; margin-left: 26px;" class="content-padded docs-icons"><span class="icon icon-me"></span> 反馈邮件：isysc1@163.com</div>
+{% if countService %}
+    <div class="content-padded docs-icons" style="font-size: 12px; margin-left: 26px;" id="countService">
+    <span class="icon icon-search"></span>    <b>服务次数：</b>{{ countService }}
+{% endif %}
+
 <div style="margin-bottom: 20px" class="content-padded">
     <form method="post" action="{% url "search" %}">
         {% csrf_token %}
@@ -24,12 +41,15 @@
                 <input name="question" type="search" id='search' placeholder='输入关键字...'/>
             </div>
 
-            <button type="submit" value="提交" id="button" class="button button-fill button-primary col-15">开始查找</button>
+            <button type="submit" value="提交" id="button" class="button button-fill button-primary col-15"
+                    onclick="countIncrease();">Go
+            </button>
 
         </div>
     </form>
 
     {% if title1 %}
+        ==================================================
         <div class="card">
             <div class="card-content">
                 <div class="card-content-inner">{{ title1 }}</div>

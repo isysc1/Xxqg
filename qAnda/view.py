@@ -2,17 +2,17 @@
 Created by Young on 2019/9/28 20:39
 """
 import json
-
-from django.http import HttpResponse
 from django.shortcuts import render
 import requests
 
+list = [210]
 
 def index(request):
     return render(request, "index.html")
 
 
 def search(request):
+    list[0] = list[0] + 1
     keyWord = request.POST.get("question")
     url = 'https://api.deeract.com/l2s/api/questions?keyword=' + keyWord
     print(url)
@@ -23,6 +23,8 @@ def search(request):
     for i in user_dict:
         answer.append(i['title'])
     answerContext = dict(zip(answerId, answer))
-    return render(request, "index.html", context=answerContext)
+    answerContext['countService'] = list[0]
+    print(answerContext)
+    return render(request, "index.html", answerContext)
 
 
