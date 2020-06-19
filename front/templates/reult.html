@@ -1,10 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>学习小助手</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 </head>
 <body>
+<div class="content" style="margin-bottom: 50px">
+    <div style="margin-bottom: 20px" class="content-padded">
+        <form method="post" action="{% url "search" %}">
+            {% csrf_token %}
+            <div class="searchbar row">
+                <div class="search-input col-85">
+                    <input name="question" type="search" id='search' placeholder='输入关键字...'/>
+                </div>
+                <button type="submit" value="提交" id="button" class="button button-fill button-primary col-15">Go
+                </button>
+            </div>
+        </form>
 
+    </div>
+    {% if answer_context.title0 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title0 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title1 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title1 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title2 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title2 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title3 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title3 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title4 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title4 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title5 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title5 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title6 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title6 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title7 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title7 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title8 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title8 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title9 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title9 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if answer_context.title10 %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <ul>
+                        {{ answer_context.title10 }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
 </body>
+<style>
+
+</style>
 </html>
