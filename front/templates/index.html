@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>学习小助手</title>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<link rel="shortcut icon" href="/favicon.ico">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="stylesheet"
-	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-<link rel="stylesheet"
-	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>学习小助手</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet"
+          href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 </head>
 <body>
-
 <header class="bar bar-nav">
-  <h1 class='title'>学习小助手</h1>
+    <h1 class='title'>学习小助手</h1>
 </header>
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title50 }}</div>
-            </div>
-        </div>
-<div style="font-size: 12px; margin-left: 26px;">搜索方法：选取题目中任意词组作为关键词，简短即可。</div>
-<div style="font-size: 12px; margin-left: 26px;">作者的话：知识的搜索引擎，更多知识点欢迎你来补充。</div>
-<div style="font-size: 12px; margin-left: 26px;">反馈邮件：isysc1@163.com</div>
+<div style="font-size: 12px; margin-left: 26px; margin-bottom: 7px; margin-top: 62px"><span
+        class="icon icon-search">  </span> 搜索方法：选取题目中任意词组作为关键词，简短即可。
+</div>
+<div style="font-size: 12px; margin-left: 26px; margin-bottom: 7px"><span class="icon icon-edit">  </span>
+    反馈邮件：isysc1@163.com
+</div>
+<div style="font-size: 12px; margin-left: 26px; margin-bottom: 7px"><span
+        class="icon icon-check">  </span>累计提供服务次数：<b>{{ count }}</b></div>
 <div style="margin-bottom: 20px" class="content-padded">
     <form method="post" action="{% url "search" %}">
         {% csrf_token %}
@@ -33,67 +32,23 @@
             <div class="search-input col-85">
                 <input name="question" type="search" id='search' placeholder='输入关键字...'/>
             </div>
-
             <button type="submit" value="提交" id="button" class="button button-fill button-primary col-15">Go</button>
-
         </div>
     </form>
 
-    {% if title1 %}
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title1 }}</div>
-            </div>
-        </div>
-    {% endif %}
+</div>
 
-    {% if title2 %}
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title2 }}</div>
-            </div>
+<div class="content-block-title">作者的叨叨</div>
+<div class="card demo-card-header-pic">
+    <div class="card-content">
+        <div class="card-content-inner">
+            <p>很开心这个网站可以帮助到你</p>
+            <p>你的star，你的反馈，都让我充满了斗志</p>
+            <p>你的赞助也是支持我开发的最大动力（赞助将用于维护网站，诸如购买服务器、申请网址等）</p>
+            <p><a href="https://imgkr.cn-bj.ufileos.com/b7b20943-bfa9-49d6-8c88-777261b29d73.png">点击这里支持作者（自愿支持，误捐请联系反馈邮件退回）</a></p>
+            <p class="color-gray">发表于 2020/06/19</p>
         </div>
-    {% endif %}
-
-    {% if title3 %}
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title3 }}</div>
-            </div>
-        </div>
-    {% endif %}
-
-    {% if title4 %}
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title4 }}</div>
-            </div>
-        </div>
-    {% endif %}
-
-    {% if title5 %}
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title5 }}</div>
-            </div>
-        </div>
-    {% endif %}
-
-    {% if title6 %}
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title6 }}</div>
-            </div>
-        </div>
-    {% endif %}
-
-    {% if title7 %}
-        <div class="card">
-            <div class="card-content">
-                <div class="card-content-inner">{{ title7 }}</div>
-            </div>
-        </div>
-    {% endif %}
+    </div>
 
 </div>
 </body>
