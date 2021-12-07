@@ -36,4 +36,4 @@
 备案过啦 换地址啦：http://www.isysc1.cn:8090/searchAnswer
 
 ### 2021.12.07
-服务器过期了 ，可恶啊，最新地址 http://www.isysc1.cn/，点击上方友情链接
+服务器过期了 ，可恶啊，点击上方友情链接即可查题，最新地址 http://www.isysc1.cn/
